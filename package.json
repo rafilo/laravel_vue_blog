@@ -5,7 +5,8 @@
         "dev": "vite",
         "build": "vite build",
         "start-all-dev": "concurrently \"vite\" \"php artisan serve\"",
-        "start-all-first-time-dev": "npm install && concurrently \"vite\" \"php artisan serve\""
+        "start-all-first-time-dev": "npm install && concurrently \"vite\" \"php artisan serve\"",
+        "frontend-test": "npx cypress open"
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",

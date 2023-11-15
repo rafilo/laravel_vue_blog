@@ -9,10 +9,7 @@ export default {
 </script>
 
 <template>
-    <div id="app">
-        <BlogLayout />
-        <!--<el-button type="default">test</el-button>-->
-    </div>
+    <BlogLayout />
 </template>
 
 <style scoped>
