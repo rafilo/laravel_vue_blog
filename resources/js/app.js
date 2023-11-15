@@ -4,9 +4,12 @@ import axios from 'axios';
 import ElementPlus from 'element-plus';
 import App from './App.vue'
 import router from './router/router.js'
+import store from './store/index.js'
+
 import mitt from 'mitt'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import 'element-plus/dist/index.css';
+
 
 const app = createApp(App);
 const emitter = mitt()
@@ -18,4 +21,5 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 app.use(ElementPlus);
 app.use(router);
+app.use(store)
 app.mount('#app');
