@@ -3,13 +3,17 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "start-all-dev": "concurrently \"vite\" \"php artisan serve\"",
+        "start-all-first-time-dev": "npm install && concurrently \"vite\" \"php artisan serve\""
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
         "@vitejs/plugin-vue": "^4.0.0",
         "axios": "^1.1.2",
         "bootstrap": "^5.2.3",
+        "concurrently": "^8.2.2",
+        "cypress": "^13.5.1",
         "laravel-mix": "^6.0.49",
         "laravel-vite-plugin": "^0.8.0",
         "sass": "^1.69.5",
