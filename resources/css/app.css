@@ -12,6 +12,14 @@
     margin:0;
     overflow: hidden;
 }
+.dark {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+.light {
+    background-color: #fefefe;
+    color: #000;
+}
 
 @tailwind base;
 @tailwind components;

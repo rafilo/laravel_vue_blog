@@ -1,11 +1,9 @@
 <script>
-import BlogMenu from "./BlogMenu.vue";
 import BlogHeader from "./BlogHeader.vue";
 
 export default {
     name: "BlogLayout",
     components: {
-        BlogMenu,
         BlogHeader
     }
 }
@@ -13,15 +11,17 @@ export default {
 
 <template>
     <div id="BlogLayout">
-    <el-container>
-        <el-header><BlogHeader/></el-header>
         <el-container>
-            <el-aside width="200px"><BlogMenu/></el-aside>
-            <el-main><h1 class="text-3xl font-bold underline">
-                Hello world!
-            </h1></el-main>
+            <el-header
+                class="relative border-b border-solid border-b-gray-200 p-0 w-full h-full bg-white dark:bg-[#242424] dark:border-b-gray-900 shadow-lg">
+                <BlogHeader/>
+            </el-header>
+            <el-container>
+                <el-main><h1 class="text-black dark:text-white text-3xl font-bold underline">
+                    Hello world!
+                </h1></el-main>
+            </el-container>
         </el-container>
-    </el-container>
     </div>
 
 </template>
@@ -29,14 +29,18 @@ export default {
 <style lang="less" scoped>
 #BlogLayout {
     height: 100%;
+
     .el-container {
         height: 100%;
-        /deep/.el-header{
-            padding:0
+
+        /deep/ .el-header {
+            padding: 0
         }
-        #BlogMenu{
-            height:100%;
-            /deep/.el-menu {
+
+        #BlogMenu {
+            height: 100%;
+
+            /deep/ .el-menu {
                 height: 100% !important;
             }
         }
