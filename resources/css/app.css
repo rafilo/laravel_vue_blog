@@ -9,4 +9,10 @@
 }
 *{
     font-family: Avenir, Helvetica, Arial, sans-serif;
+    margin:0;
+    overflow: hidden;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

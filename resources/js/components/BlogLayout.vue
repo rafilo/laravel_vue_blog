@@ -1,27 +1,46 @@
 <script>
 import BlogMenu from "./BlogMenu.vue";
 import BlogHeader from "./BlogHeader.vue";
+
 export default {
     name: "BlogLayout",
-    components:{
-        BlogHeader,
-        BlogMenu
+    components: {
+        BlogMenu,
+        BlogHeader
     }
 }
 </script>
 
 <template>
-    <el-row class="blog-main-page">
-        <BlogHeader />
-        <el-col :span="6" style="height: 100%">
-            <BlogMenu />
-        </el-col>
-        <el-col :span="18" style="overflow: auto">
-            main page
-        </el-col>
-    </el-row>
+    <div id="BlogLayout">
+    <el-container>
+        <el-header><BlogHeader/></el-header>
+        <el-container>
+            <el-aside width="200px"><BlogMenu/></el-aside>
+            <el-main><h1 class="text-3xl font-bold underline">
+                Hello world!
+            </h1></el-main>
+        </el-container>
+    </el-container>
+    </div>
+
 </template>
 
-<style scoped>
+<style lang="less" scoped>
+#BlogLayout {
+    height: 100%;
+    .el-container {
+        height: 100%;
+        /deep/.el-header{
+            padding:0
+        }
+        #BlogMenu{
+            height:100%;
+            /deep/.el-menu {
+                height: 100% !important;
+            }
+        }
 
+    }
+}
 </style>
