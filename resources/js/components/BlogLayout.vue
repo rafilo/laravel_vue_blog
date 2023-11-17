@@ -17,9 +17,12 @@ export default {
                 <BlogHeader/>
             </el-header>
             <el-container>
-                <el-main><h1 class="text-black dark:text-white text-3xl font-bold underline">
-                    Hello world!
-                </h1></el-main>
+                <el-main>
+                    <h1 class="text-black dark:text-white text-3xl font-bold underline">
+                        Hello world!
+                    </h1>
+                </el-main>
+                <el-footer></el-footer>
             </el-container>
         </el-container>
     </div>

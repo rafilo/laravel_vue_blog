@@ -9,7 +9,6 @@
     </head>
     <body style="height: 100%">
         <div id="app">
-            <router-view></router-view>
         </div>
     </body>
 </html>
