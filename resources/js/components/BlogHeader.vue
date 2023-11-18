@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
+import { onMounted, onUnmounted, getCurrentInstance } from 'vue'
 
 const router = useRouter();
 const isNightMode = ref(false);
@@ -24,8 +25,9 @@ const navRoutes = ref([
 ])
 
 const active = computed(() => router.currentRoute.value.path);
+const {proxy} = getCurrentInstance();
 
-function changeTheme(isNightMode) {
+function switchTheme(isNightMode) {
     if (isNightMode) {
         localStorage.theme = 'dark'
         document.documentElement.classList.remove('light')
@@ -36,6 +38,31 @@ function changeTheme(isNightMode) {
         document.documentElement.classList.add('light')
     }
 }
+
+function initTheme(){
+    let storedTheme = localStorage.theme
+    if (storedTheme && storedTheme === 'dark'){
+        isNightMode.value = true
+        document.documentElement.classList.remove('light')
+        document.documentElement.classList.add('dark')
+    } else {
+        isNightMode.value = false
+        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.add('light')
+    }
+}
+
+function adminLogin(){
+    proxy.$axios("/test").then((response)=>{
+        console.log(response)
+    }).catch(()=>{
+        console.log('here')
+    })
+}
+
+onMounted(()=>{
+    initTheme()
+})
 
 </script>
 
@@ -67,13 +94,13 @@ function changeTheme(isNightMode) {
         </nav>
 
         <div class="block">
-            <el-button>Log in</el-button>
+            <el-button @click="adminLogin">Log in</el-button>
             <el-switch
                 v-model="isNightMode"
                 style="--el-switch-on-color: #6b6d71; --el-switch-off-color: #409EFF"
                 active-action-icon="Moon"
                 inactive-action-icon="Sunny"
-                @change="changeTheme"
+                @change="switchTheme"
             >
             </el-switch>
         </div>

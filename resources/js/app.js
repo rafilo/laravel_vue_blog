@@ -1,10 +1,11 @@
-import './bootstrap';
+//import './bootstrap';
 import { createApp } from 'vue';
 import axios from 'axios';
 import ElementPlus from 'element-plus';
 import App from './App.vue'
 import router from './router/router.js'
 import store from './store/index.js'
+import Api from './api/axios.js'
 
 import mitt from 'mitt'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
@@ -20,7 +21,7 @@ hljs.configure({
 const app = createApp(App);
 const emitter = mitt()
 
-app.config.globalProperties.$axios = axios;
+app.config.globalProperties.$axios = Api;
 app.config.globalProperties.$eventbus = emitter;
 
 // import element-ui icon
