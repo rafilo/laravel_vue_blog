@@ -11,6 +11,8 @@
 - first time: `start-all-first-time-dev`
 - otherwise: `start-all-dev`
 
+样式参照：https://juejin.cn/post/7201062745391136827
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

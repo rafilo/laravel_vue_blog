@@ -21,10 +21,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+/**
+ * since we are using vue-router instead of laravel built in one for rendering
+ * single page app, need to fix the view to welcome.blade.php when routing
+ */
+Route::get('{any}', function () {
+    return view('welcome');
+})->where('any', '.*');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
