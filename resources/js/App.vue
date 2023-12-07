@@ -9,7 +9,7 @@ let curScrollTop = ref(0);
 provide("scrollTop", curScrollTop);
 
 // listen to scroll event
-function onScroll(scrollTop){
+function onScroll(scrollTop) {
     // 向navbar传递阴影控制参数
     pageScrolled.value = scrollTop ? true : false;
     // provide响应式滚动高度
@@ -22,7 +22,7 @@ function onScroll(scrollTop){
     <el-container>
         <el-header
             class="relative border-b border-solid border-b-gray-200 p-0 w-full h-full bg-white dark:bg-[#242424] dark:border-b-gray-900 shadow-lg">
-            <BlogHeader/>
+            <BlogHeader />
         </el-header>
         <el-container>
             <el-main>
