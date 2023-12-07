@@ -4,7 +4,7 @@ export default {
       './resources/views/**/*.blade.php',
       './resources/js/**/*{.js,.ts,.vue}',
   ],
-    darkMode: 'class',
+  darkMode: 'class',
   theme: {
     extend: {},
   },
